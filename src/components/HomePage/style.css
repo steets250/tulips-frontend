@@ -1,0 +1,8 @@
+.home-page {
+    
+}
+
+.home-page-stories {
+    display: flex;
+    flex-wrap: wrap;
+}
