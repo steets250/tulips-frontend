@@ -2,7 +2,7 @@ import React from "react";
 
 import StoryCard from '../StoryCard';
 
-import './style.css';
+import './style.less';
 
 interface Story {
     uuid: string;

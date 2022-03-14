@@ -5,7 +5,7 @@ import ReportIcon from "../../assets/report.svg";
 import LikedIcon from "../../assets/liked.svg";
 import UnlikedIcon from "../../assets/unliked.svg";
 
-import './style.css';
+import './style.less';
 
 interface Story {
     uuid: string;
