@@ -1,12 +1,20 @@
 .story-card {
     font-family: 'Darker Grotesque', sans-serif;
     color: #000000;
-    width: 420px;
-    min-height: 270px;
     background-color: #FFFEDD;
-    padding: 32px 16px;
     position: relative;
     margin: 48px;
+}
+
+.story-card-content {
+    width: 420px;
+    min-height: 270px;
+    padding: 32px 16px;
+}
+
+.story-card-content.reported {
+    filter: blur(10px);
+    user-select: none;
 }
 
 .story-card-pin-icon {
@@ -63,4 +71,38 @@
 .story-card-like-button-icon {
     width: 20px;
     height: 18px;
+}
+
+.story-card-report {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-card-report-text {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+}
+
+.story-card-input {
+    background-color: rgba(196, 196, 196, 0.2);
+    width: 387px;
+    height: 204px;
+    padding: 16px;
+}
+
+.story-card-button {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration: underline;
 }
