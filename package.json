@@ -23,7 +23,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx stylelint \"**/*.less\"",
+    "lint:fix": "npx stylelint \"**/*.less\" --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -42,5 +44,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss": "^8.4.8",
+    "postcss-less": "^6.0.0",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0"
   }
 }

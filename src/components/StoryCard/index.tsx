@@ -23,7 +23,7 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
         story: {
             uuid,
             text,
-            title,
+            // title,
             likes,
         }
     } = props;
@@ -125,7 +125,7 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                     <img className="story-card-pin-icon" src={PinIcon} alt="Pushpin"></img>
                     <textarea className="story-card-input" />
                     <div className="story-card-bottom">
-                        <p className="story-card-terms">By sharing, you agree to the <a href="" className="underline">terms</a>.</p>
+                        <p className="story-card-terms">By sharing, you agree to the <a href="/terms" className="underline">terms</a>.</p>
                         <button className="story-card-button" onClick={() => handleCreate("one", "two")}>Share</button>
                     </div>
                 </div>
