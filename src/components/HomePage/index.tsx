@@ -48,7 +48,7 @@ const HomePage: React.FC = () => {
     return (
         <>
         <div className="home-page-stories">
-            {stories.map((story) => <StoryCard story={story}/>)}
+            {stories.map((story) => <StoryCard key={story.uuid} story={story}/>)}
         </div>
         </>
     );

@@ -35,6 +35,12 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
         setLiked(localStorage.getItem(`${uuid}-liked`) === "true")
     }, [setLiked, uuid]);
 
+    useEffect(() => {
+        if (localStorage.getItem(`${uuid}-reported`) === "true") {
+            setMode("REPORTED");
+        }
+    }, [uuid, setMode]);
+
     const handleLike = (uuid: string) => {
         if (localStorage.getItem(`${uuid}-liked`)) {
             // API CALL HERE
@@ -55,6 +61,7 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
         } else {
             // API CALL HERE
             localStorage.setItem(`${uuid}-reported`, "true");
+            setMode("REPORTED");
             alert("You reported " + uuid + "!");
         }
     }

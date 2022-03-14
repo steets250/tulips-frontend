@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import './reset.css';
+import './index.css';
 
 import AboutPage from './containers/AboutPage';
 import HomePage from './containers/HomePage';

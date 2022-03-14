@@ -1,5 +1,4 @@
 .story-card {
-    font-family: 'Darker Grotesque', sans-serif;
     color: #000000;
     background-color: #FFFEDD;
     position: relative;
@@ -7,6 +6,8 @@
 }
 
 .story-card-content {
+    display: flex;
+    flex-direction: column;
     width: 420px;
     min-height: 270px;
     padding: 32px 16px;
@@ -27,6 +28,7 @@
 
 .story-card-story {
     font-size: 18px;
+    flex-grow: 1;
 }
 
 .story-card-bottom {
