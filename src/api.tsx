@@ -1,43 +1,69 @@
-const API_URL = 'https://tulips-backend.herokuapp.com/';
+const API_URL = 'https://tulips-backend.herokuapp.com';
 
 //GET
 export const getStories = async () => {
-    const response = await fetch(`${API_URL}/api/story`);
-    const data = response.json();
-    return data;
+    try {
+        const response = await fetch(`${API_URL}/api/story`);
+        console.log(response);
+        const data = response.json();
+        console.log(data);
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 //GET
-export const getStory = async (uuid: string) => {
-    const response = await fetch(`${API_URL}/api/story/${uuid}`);
-    const data = response.json();
-    return data;
+export const getStory = async (id: string) => {
+    try {
+        const response = await fetch(`${API_URL}/api/story/${id}`);
+        const data = response.json();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 //POST
 export const createStory = async (story: object) => {
-    const response = await fetch(`${API_URL}/api/story`);
-    const data = response.json();
-    return data;
+    try {
+        const response = await fetch(`${API_URL}/api/story`, { method: "POST" });
+        const data = response.json();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 //POST
-export const reportStory = async (uuid: string) => {
-    const response = await fetch(`${API_URL}/api/story/${uuid}/report`);
-    const data = response.json();
-    return data;
+export const reportStory = async (id: string) => {
+    try {
+        const response = await fetch(`${API_URL}/api/story/${id}/report`, { method: "POST" });
+        const data = response.text();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 //POST
-export const likeStory = async (uuid: string) => {
-    const response = await fetch(`${API_URL}/api/story/${uuid}/like`);
-    const data = response.json();
-    return data;
+export const likeStory = async (id: string) => {
+    try {
+        const response = await fetch(`${API_URL}/api/story/${id}/like`, { method: "POST" });
+        const data = response.json();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 //POST
-export const unlikeStory = async (uuid: string) => {
-    const response = await fetch(`${API_URL}/api/story/${uuid}/unlike`);
-    const data = response.json();
-    return data;
+export const unlikeStory = async (id: string) => {
+    try {
+        const response = await fetch(`${API_URL}/api/story/${id}/unlike`, { method: "POST" });
+        const data = response.json();
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
 }

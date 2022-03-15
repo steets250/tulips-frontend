@@ -6,9 +6,10 @@ import LikedIcon from "../../assets/liked.svg";
 import UnlikedIcon from "../../assets/unliked.svg";
 
 import './style.less';
+import { likeStory, reportStory, unlikeStory } from "../../api";
 
 interface Story {
-    uuid: string;
+    id: string;
     text: string;
     title: string;
     likes: number;
@@ -16,59 +17,67 @@ interface Story {
 
 interface StoryCardProps {
     story: Story;
+    refresh: Function;
 }
 
 const StoryCard: React.FC<StoryCardProps> = (props) => {
     const {
         story: {
-            uuid,
+            id,
             text,
             // title,
             likes,
-        }
+        },
+        refresh
     } = props;
 
     const [mode, setMode] = useState<"NORMAL" | "REPORTED" | "CREATING">("NORMAL");
     const [liked, setLiked] = useState<boolean>(false);
 
     useEffect(() => {
-        setLiked(localStorage.getItem(`${uuid}-liked`) === "true")
-    }, [setLiked, uuid]);
+        setLiked(localStorage.getItem(`${id}-liked`) === "true");
+    }, [setLiked, id]);
 
     useEffect(() => {
-        if (localStorage.getItem(`${uuid}-reported`) === "true") {
+        if (localStorage.getItem(`${id}-reported`) === "true") {
             setMode("REPORTED");
         }
-    }, [uuid, setMode]);
+    }, [id, setMode]);
 
-    const handleLike = (uuid: string) => {
-        if (localStorage.getItem(`${uuid}-liked`)) {
-            // API CALL HERE
-            localStorage.removeItem(`${uuid}-liked`);
-            setLiked(false);
-            alert("You unliked " + uuid + "!");
+    const handleLike = (id: string) => {
+        if (localStorage.getItem(`${id}-liked`)) {
+            unlikeStory(id).then(() => {
+                localStorage.removeItem(`${id}-liked`);
+                setLiked(false);
+                // alert("You unliked " + id + "!");
+                refresh();
+            });
         } else {
-            // API CALL HERE
-            localStorage.setItem(`${uuid}-liked`, "true");
-            setLiked(true);
-            alert("You liked " + uuid + "!");
+            likeStory(id).then(() => {
+                localStorage.setItem(`${id}-liked`, "true");
+                setLiked(true);
+                // alert("You liked " + id + "!");
+                refresh();
+            });
         }
     };
 
-    const handleReport = (uuid: string) => {
-        if (localStorage.getItem(`${uuid}-reported`)) {
-            alert("You already reported " + uuid + "!");
+    const handleReport = (id: string) => {
+        if (localStorage.getItem(`${id}-reported`)) {
+            // alert("You already reported " + id + "!");
         } else {
-            // API CALL HERE
-            localStorage.setItem(`${uuid}-reported`, "true");
-            setMode("REPORTED");
-            alert("You reported " + uuid + "!");
+            reportStory(id).then(() => {
+                localStorage.setItem(`${id}-reported`, "true");
+                setMode("REPORTED");
+                // alert("You reported " + id + "!");
+                refresh();
+            });
         }
     }
 
     const handleCreate = (title: string, text: string) => {
         // API CALL HERE
-        alert(`You created a story with title: "${title}" and the text: "${text}"`);
+        // alert(`You created a story with title: "${title}" and the text: "${text}"`);
     }
 
     let content = <></>;
@@ -80,12 +89,12 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                     <img className="story-card-pin-icon" src={PinIcon} alt="Pushpin"></img>
                     <p className="story-card-story">{text}</p>
                     <div className="story-card-bottom">
-                        <button className="story-card-report-button" type="button" onClick={() => handleReport(uuid)}>
+                        <button className="story-card-report-button" type="button" onClick={() => handleReport(id)}>
                             <img className="story-card-report-button-icon" src={ReportIcon} alt="Report" />
                         </button>
                         <div className="story-card-like-container">
                             <p className="story-card-likes">{likes}</p>
-                            <button className="story-card-like-button" type="button" onClick={() => handleLike(uuid)}>
+                            <button className="story-card-like-button" type="button" onClick={() => handleLike(id)}>
                                 <img className="story-card-like-button-icon" src={liked ? LikedIcon : UnlikedIcon} alt="Like" />
                             </button>
                         </div>
@@ -101,12 +110,12 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                     <div className="story-card-content reported">
                         <p className="story-card-story">{text}</p>
                         <div className="story-card-bottom">
-                            <button className="story-card-report-button" type="button" onClick={() => handleReport(uuid)}>
+                            <button className="story-card-report-button" type="button" onClick={() => handleReport(id)}>
                                 <img className="story-card-report-button-icon" src={ReportIcon} alt="Report" />
                             </button>
                             <div className="story-card-like-container">
                                 <p className="story-card-likes">{likes}</p>
-                                <button className="story-card-like-button" type="button" onClick={() => handleLike(uuid)}>
+                                <button className="story-card-like-button" type="button" onClick={() => handleLike(id)}>
                                     <img className="story-card-like-button-icon" src={UnlikedIcon} alt="Like" />
                                 </button>
                             </div>
