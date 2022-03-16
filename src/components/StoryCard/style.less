@@ -28,6 +28,10 @@
   &-story {
     flex-grow: 1;
     font-size: 18px;
+
+    &-title {
+      font-weight: 700;
+    }
   }
 
   &-bottom {
@@ -106,5 +110,30 @@
 
   .underline {
     text-decoration: underline;
+  }
+
+  .tooltip {
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 20px;
+
+    .tooltiptext {
+      background-color: rgba(68, 68, 68, 80%);
+      border-radius: 6px;
+      color: #fff;
+      left: -30px;
+      padding: 5px 0;
+      position: absolute;
+      text-align: center;
+      top: -40px;
+      visibility: hidden;
+      width: 80px;
+      z-index: 1;
+    }
+
+    &:hover .tooltiptext {
+      visibility: visible;
+    }
   }
 }
