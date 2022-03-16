@@ -16,8 +16,8 @@ export const genderBreakdownData: ChartData<"pie"> = {
     labels: ['Non-Binary', 'Female', 'Male'],
     datasets: [
       {
-        label: '% of Participants',
-        data: [1.7, 45, 53.3],
+        label: '# of Participants',
+        data: [1, 27, 32],
         backgroundColor: [
           Colors.LIGHT_BLUE,
           Colors.ORANGE,
@@ -51,7 +51,7 @@ export const hispanicOrLatinoBreakdownData: ChartData<"pie"> = {
   datasets: [
     {
       label: '% of Participants',
-      data: [6.7, 91.7, 1.7],
+      data: [4, 55, 1],
       backgroundColor: [
         Colors.LIGHT_BLUE,
         Colors.RED,

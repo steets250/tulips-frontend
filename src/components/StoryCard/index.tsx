@@ -17,12 +17,13 @@ interface Story {
 }
 
 interface StoryCardProps {
+    readonly?: boolean;
     story: Story;
     refresh: Function;
 }
 
 const StoryCard: React.FC<StoryCardProps> = (props) => {
-    const { story, refresh } = props;
+    const { readonly = false, story, refresh } = props;
 
     const [mode, setMode] = useState<"NORMAL" | "REPORTED">("NORMAL");
     const [liked, setLiked] = useState<boolean>(false);
@@ -78,8 +79,10 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
             content = (
                 <div className="story-card-content">
                     <img className="story-card-pin-icon" src={PinIcon} alt="Pushpin"></img>
-                    <p className="story-card-story">{title ? <span className="story-card-story-title">{title}: </span> : ''}{text}</p>
-                    <div className="story-card-bottom">
+                    {title && <p className="story-card-story nogrow"><span className="story-card-story-title">{title}</span></p>}
+                    <p className="story-card-story">{text}</p>
+                    {!readonly && (
+                        <div className="story-card-bottom">
                         <div className="tooltip">
                             <p className="tooltiptext">Report Story</p>
                         <button className="story-card-report-button" type="button" onClick={() => handleReport(id)}>
@@ -96,6 +99,7 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                             </div>
                         </div>
                     </div>
+                    )}
                 </div>
             );
             break;
