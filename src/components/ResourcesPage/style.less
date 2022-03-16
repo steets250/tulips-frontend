@@ -1,3 +1,69 @@
 .resources-page {
-  // Placeholder
+  padding: 16px 64px;
+
+  &-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &-section {
+    border-bottom: 1px solid #c4c4c4;
+    margin: 0 -64px;
+    padding: 16px 64px;
+
+    &-title {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    &:last-child {
+      border-bottom: transparent;
+    }
+  }
+
+  &-resource {
+    align-items: center;
+    display: flex;
+    margin-bottom: 32px;
+
+    &-title {
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    &-text {
+      font-size: 24px;
+    }
+
+    &-image {
+      height: 250px;
+      object-fit: cover;
+      width: 333px;
+
+      &.left {
+        margin-right: 32px;
+      }
+
+      &.right {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &-link {
+    text-decoration: underline;
+  }
+
+  &-message {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &-email {
+    text-decoration: underline;
+  }
 }
