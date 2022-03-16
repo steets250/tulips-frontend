@@ -1,7 +1,7 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, BarElement, LinearScale, Title, ChartOptions } from 'chart.js';
 import React from 'react';
 import { Bar, Doughnut, Pie, Chart } from 'react-chartjs-2';
-import { departmentBreakdownData, genderBreakdownData, groupSettingsRating, hispanicOrLatinoBreakdownData, racesBreakdownData } from "./data";
+import { classJudgementRating, departmentBreakdownData, genderBreakdownData, groupSettingsRating, hispanicOrLatinoBreakdownData, majorSocialBiasBreakdown, officeHoursJudgementRating, racesBreakdownData, thoughtsMatterRating, ucsdStudentsSupportRating } from "./data";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 ChartJS.register(
@@ -59,5 +59,18 @@ export const RaceBreakdown = () => <Bar data={racesBreakdownData} options={{
 }}/> 
 
 export const DepartmentBreakdown = () => <Doughnut data={departmentBreakdownData} />
-
 export const GroupSettingsRating = () => <Doughnut data={groupSettingsRating} plugins={generateDoughnutPlugins(2.98)}/>
+export const UcsdStudentsSupport = () => <Doughnut data={ucsdStudentsSupportRating} plugins={generateDoughnutPlugins(4.37)}/>
+export const OfficeHoursJudgement = () => <Doughnut data={officeHoursJudgementRating} plugins={generateDoughnutPlugins(2.22)}/>
+export const ClassJudgement = () => <Doughnut data={classJudgementRating} plugins={generateDoughnutPlugins(2.63)}/>
+export const ThoughtsMatter = () => <Doughnut data={thoughtsMatterRating} plugins={generateDoughnutPlugins(2.32)}/>
+
+export const MajorSocialBiasBreakdown = () => <Bar data={majorSocialBiasBreakdown} options={{
+    indexAxis: 'x' as const,
+    responsive: true,
+    elements: {
+        bar: {
+          borderWidth: 2,
+        },
+      },
+    }}/>

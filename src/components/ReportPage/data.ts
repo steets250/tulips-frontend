@@ -106,3 +106,35 @@ const setRatingData = (dataValues: number[]): ChartData<"doughnut"> => {
 
 // Statement: People often talk over or shrug off my ideas in group settings.
 export const groupSettingsRating = setRatingData([10, 26.7, 36.7, 11.7, 11.7, 3.3])
+
+// Statement: UCSD students are fully supportive of my identity. 
+export const ucsdStudentsSupportRating = setRatingData([0, 3.3, 13.3, 36.7, 36.7, 10])
+
+// Statement: If I go to office hours or tutoring by the university, I’d feel judged because of my identity. 
+export const officeHoursJudgementRating = setRatingData([36.7, 28.3, 18.3, 11.7, 3.3, 1.7])
+
+// Statement: When I attend class, I feel judged by other students because of who I am. 
+export const classJudgementRating = setRatingData([20, 31.7, 25, 15, 5, 3.3])
+
+// Statement: On UCSD campus, my thoughts and opinions don’t matter because of my identity.
+export const thoughtsMatterRating = setRatingData([25, 36.7, 21.7, 15, 1.7, 0])
+
+
+export const majorSocialBiasBreakdown: ChartData<"bar"> = {
+  labels: ['COGS', 'CSE', 'DSC', 'ECE', 'MAE', 'MATH'],
+  datasets: [
+    {
+      label: '% of Participants',
+      data: [80, 41, 100, 88, 100, 33],
+      backgroundColor: [
+        Colors.DARK_GREEN,
+        Colors.PURPLE,
+        Colors.PINK,
+        Colors.RED,
+        Colors.DARK_BLUE,
+        Colors.ORANGE
+      ],
+      borderWidth: 2,
+    },
+  ],
+};
