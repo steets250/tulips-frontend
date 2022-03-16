@@ -18,11 +18,11 @@ ChartJS.defaults.set("plugins.datalabels", {
     color: '#000000'
 });
 
+// Stack Overflow: https://stackoverflow.com/questions/53068562/add-text-inside-the-doughnut-chart-of-the-react-chartjs-2-box-to-react
 const generateDoughnutPlugins = (averageValue: number) => {
     return [{
         id: 'some-id',
         beforeDraw: function(chart) {
-            console.log(chart);
             const width = chart.width,
             height = chart.height,
             ctx = chart.ctx;
