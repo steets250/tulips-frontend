@@ -1,31 +1,12 @@
 import React from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-
+import * as Charts from './charts';
 import './style.less';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-const data = {
-    labels: ['Non-Binary', 'Female', 'Male'],
-    datasets: [
-      {
-        label: '# of Votes',
-        data: [1.7, 45, 53.3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
+const Spacer = () => <div>
+    <br />
+    <br />
+    <br />
+</div>
 
 const ReportPage: React.FC = () => {
     return (
@@ -33,12 +14,30 @@ const ReportPage: React.FC = () => {
             <h2 className="report-page-title">Data Report</h2>
             <h3 className="report-page-subtitle">Example Subtitle (Like a question)</h3>
             <p className="report-page-paragraph">Example Paragraph</p>
-            <br />
-            <br />
-            <br />
-            <h3 className="report-page-subtitle">How do you describe yourself?* (60 responses)</h3>
+            
+            <Spacer />
+            <h3 className="report-page-subtitle">How do you describe yourself? (60 responses)</h3>
             <div style={{width: "200px", height: "200px"}} >
-                <Pie data={data} />
+                <Charts.GenderBreakdown />
+            </div>
+
+            <Spacer />
+            <h3 className="report-page-subtitle">Which of these races do you identify with? (56 responses)</h3>
+            <div style={{width: "100%", height: "500px", display: 'flex', flexDirection: 'row'}}>
+                <Charts.RaceBreakdown />
+                <Charts.HispanicBreakdown />
+            </div>
+
+            <Spacer />
+            <h3 className="report-page-subtitle">Which department do you take most of your classes in?</h3>
+            <div>
+                <Charts.DepartmentBreakdown />
+            </div>
+
+            <Spacer />
+            <h3 className="report-page-subtitle">More doughnuts!</h3>
+            <div>
+                <Charts.GroupSettingsRating />
             </div>
         </div>
     );
