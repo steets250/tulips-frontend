@@ -25,10 +25,17 @@ export const getStory = async (id: string) => {
 }
 
 //POST
-export const createStory = async (story: object) => {
+export const createStory = async (title: string, text: string) => {
     try {
-        const response = await fetch(`${API_URL}/api/story`, { method: "POST" });
-        const data = response.json();
+        const response = await fetch(`${API_URL}/api/story`, {
+            method: "POST",
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ title, text }),
+        });
+        const data = response.text();
         return data;
     } catch (e) {
         console.log(e);

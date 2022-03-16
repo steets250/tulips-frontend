@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 import PinIcon from "../../assets/pin.svg";
@@ -21,18 +22,17 @@ interface StoryCardProps {
 }
 
 const StoryCard: React.FC<StoryCardProps> = (props) => {
-    const {
-        story: {
-            id,
-            text,
-            // title,
-            likes,
-        },
-        refresh
-    } = props;
+    const { story, refresh } = props;
 
-    const [mode, setMode] = useState<"NORMAL" | "REPORTED" | "CREATING">("NORMAL");
+    const [mode, setMode] = useState<"NORMAL" | "REPORTED">("NORMAL");
     const [liked, setLiked] = useState<boolean>(false);
+
+    const {
+        id,
+        text,
+        // title,
+        likes,
+    } = story;
 
     useEffect(() => {
         setLiked(localStorage.getItem(`${id}-liked`) === "true");
@@ -73,11 +73,6 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                 refresh();
             });
         }
-    }
-
-    const handleCreate = (title: string, text: string) => {
-        // API CALL HERE
-        // alert(`You created a story with title: "${title}" and the text: "${text}"`);
     }
 
     let content = <></>;
@@ -125,19 +120,6 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
                         <p className="story-card-report-text">You have reported this story.<br/>It will be reviewed by a site admin.</p>
                     </div>
                 </>
-            );
-            break;
-
-        case "CREATING":
-            content = (
-                <div className="story-card-content">
-                    <img className="story-card-pin-icon" src={PinIcon} alt="Pushpin"></img>
-                    <textarea className="story-card-input" />
-                    <div className="story-card-bottom">
-                        <p className="story-card-terms">By sharing, you agree to the <a href="/terms" className="underline">terms</a>.</p>
-                        <button className="story-card-button" onClick={() => handleCreate("one", "two")}>Share</button>
-                    </div>
-                </div>
             );
             break;
     
