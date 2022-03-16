@@ -155,7 +155,7 @@ const ResourcesPage: React.FC = () => {
     return (
         <div className="resources-page">
             <h2 className="resources-page-title">Resources</h2>
-            <div>
+            {/* <div> */}
                 {resources.map((section, r_idx) => (
                     <div className="resources-page-section" key={r_idx}>
                         <h3 className="resources-page-section-title">{section.section_title}</h3>
@@ -174,7 +174,7 @@ const ResourcesPage: React.FC = () => {
                         ))}
                     </div>
                 ))}
-            </div>
+            {/* </div> */}
             <p className="resources-page-message">Have a suggestion for a resource? Email the team at: <a href="mailto:the.project.tulips@gmail.com"><span className="resources-page-email">the.project.tulips@gmail.com</span></a></p>
         </div>
     );

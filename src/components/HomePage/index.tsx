@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
             <div className="home-page" id="home-page">
                 <h2 className="home-page-title">How have you experienced social bias at UCSD?</h2>
                 <p className="home-page-subtitle">Plant your story and watch it grow to sprout change</p>
-                <button className="home-page-create" type="button" onClick={() => {
+                <button className="home-page-create" type="button" aria-label="Create Story" onClick={() => {
                     setCreating(true);
                 }}>
                     <img className="home-page-create-image" src={Pencil} alt="" />

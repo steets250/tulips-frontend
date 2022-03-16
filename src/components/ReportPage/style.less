@@ -2,17 +2,34 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding: 32px 64px;
+
+  &-contents {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
 
   &-title {
-    font-size: 55px;
+    font-size: 48px;
     font-weight: 700;
-    margin-top: 16px;
+    margin-top: 32px;
     text-align: center;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   &-subtitle {
     font-size: 36px;
     margin-top: 12px;
+  }
+
+  &-bolded {
+    font-size: 26px;
+    font-weight: 700;
   }
 
   &-paragraph {

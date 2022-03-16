@@ -17,12 +17,13 @@ interface Story {
 }
 
 interface StoryCardProps {
+    readonly?: boolean;
     story: Story;
     refresh: Function;
 }
 
 const StoryCard: React.FC<StoryCardProps> = (props) => {
-    const { story, refresh } = props;
+    const { readonly = false, story, refresh } = props;
 
     const [mode, setMode] = useState<"NORMAL" | "REPORTED">("NORMAL");
     const [liked, setLiked] = useState<boolean>(false);
@@ -30,7 +31,7 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
     const {
         id,
         text,
-        // title,
+        title,
         likes,
     } = story;
 
@@ -49,14 +50,12 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
             unlikeStory(id).then(() => {
                 localStorage.removeItem(`${id}-liked`);
                 setLiked(false);
-                // alert("You unliked " + id + "!");
                 refresh();
             });
         } else {
             likeStory(id).then(() => {
                 localStorage.setItem(`${id}-liked`, "true");
                 setLiked(true);
-                // alert("You liked " + id + "!");
                 refresh();
             });
         }
@@ -64,12 +63,10 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
 
     const handleReport = (id: string) => {
         if (localStorage.getItem(`${id}-reported`)) {
-            // alert("You already reported " + id + "!");
         } else {
             reportStory(id).then(() => {
                 localStorage.setItem(`${id}-reported`, "true");
                 setMode("REPORTED");
-                // alert("You reported " + id + "!");
                 refresh();
             });
         }
@@ -82,18 +79,27 @@ const StoryCard: React.FC<StoryCardProps> = (props) => {
             content = (
                 <div className="story-card-content">
                     <img className="story-card-pin-icon" src={PinIcon} alt="Pushpin"></img>
+                    {title && <p className="story-card-story nogrow"><span className="story-card-story-title">{title}</span></p>}
                     <p className="story-card-story">{text}</p>
-                    <div className="story-card-bottom">
+                    {!readonly && (
+                        <div className="story-card-bottom">
+                        <div className="tooltip">
+                            <p className="tooltiptext">Report Story</p>
                         <button className="story-card-report-button" type="button" onClick={() => handleReport(id)}>
                             <img className="story-card-report-button-icon" src={ReportIcon} alt="Report" />
                         </button>
+                        </div>
                         <div className="story-card-like-container">
                             <p className="story-card-likes">{likes}</p>
-                            <button className="story-card-like-button" type="button" onClick={() => handleLike(id)}>
-                                <img className="story-card-like-button-icon" src={liked ? LikedIcon : UnlikedIcon} alt="Like" />
-                            </button>
+                            <div className="tooltip">
+                                <p className="tooltiptext">Like Story</p>
+                                <button className="story-card-like-button" type="button" onClick={() => handleLike(id)}>
+                                    <img className="story-card-like-button-icon" src={liked ? LikedIcon : UnlikedIcon} alt="Like" />
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    )}
                 </div>
             );
             break;
