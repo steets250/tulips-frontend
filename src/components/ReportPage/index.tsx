@@ -58,7 +58,7 @@ const ReportPage: React.FC = () => {
                 <h3 className="report-page-title">Significant Statistics &amp; Context</h3>
                 <p className="report-page-paragraph">In this section, we are going to highlight statistically significant metrics that we found in our data regarding the experiences between different groups at UCSD. We interpreted these metrics to be “statistically significant” via null hypothesis testing with a threshold p-value of 0.05. In other words, in each of the following scenarios, our null hypothesis is that there are no correlations between the different groups. We only consider a metric to be significant if we find that the p-value is under 0.05, in other words the probability that we would find this data if there was no correlation between different groups.</p>
                 <p className="report-page-paragraph">Note: For metrics which we compare the experience of different genders, we did not consider nonbinary as we only had one response, which meant there is 0 variability in data. 0 variability in data means that we are unable to find a p-value, thus we cannot use statistics to compare this group. However, We still included it within our charts for full transparency.</p>
-                <p className="report-page-paragraph">PLACES FOR LINKS AND STUFF</p>
+            
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
