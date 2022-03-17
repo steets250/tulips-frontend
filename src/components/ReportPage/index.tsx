@@ -62,10 +62,10 @@ const ReportPage: React.FC = () => {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                            <Charts.GroupSettingsRating />
                         </div>
                     </div>
-                    <div>
+                    <div style={{marginLeft: "32px"}}>
                         <h3 className="report-page-bolded">People often talk over or shrug off my ideas in group settings.</h3>
                         <p className="report-page-paragraph">One common theme we often hear is that in STEM, women are often taken less seriously than men. For example, one of our female interviewees talked about how at a hackathon, she felt that she was not listened to compared to other guys in the group that were her exact major.</p>
                     </div>
@@ -76,10 +76,10 @@ const ReportPage: React.FC = () => {
                     <div>
                         <StoryCard readonly story={{id: "", text: "One participant noted “some group members speaking over me, male org member over-explaining video game, feeling quickly developing frustration from fellow male classmate”", title: "Free Response Survey Question: Feel free to elaborate on any of your answers above or even share a related experience.", likes: 0}} refresh={() => {}}/>
                     </div>
-                    <div>
+                    <div style={{marginLeft: "32px"}}>
                         <p style={{ fontSize: "16px", fontWeight: "700" }}>Interview Question: “Can you share a moment where you experienced or witnessed social bias on campus?”</p>
-                        <div style={{ backgroundColor: "#FFFEDD", width: "699px", height: "148px", borderRadius: "15px", position: "relative" }}>
-                            <img src="/placeholder-1.png" alt="Profile Placeholder 1" style={{ height: "100px", width: "100px", position: "absolute", top: "25px", left: "-50px" }}/>
+                        <div style={{ backgroundColor: "#FFFEDD", width: "600px", height: "168px", borderRadius: "15px", position: "relative" }}>
+                            <img src="/placeholder-1.png" alt="Profile Placeholder 1" style={{ height: "100px", width: "100px", position: "absolute", top: "34px", left: "-50px" }}/>
                             <p className="report-page-paragraph" style={{ margin: "8px 8px 8px 80px" }}>“When I’m in a group project like a hackathon or something, I get stuck on design or writing or just busy work. Maybe it’s because I’m cog sci, but there’s been other cog sci people that are guys, but they get to do more of the data collection or coding.” -Jane</p>
                         </div>
                     </div>
@@ -87,10 +87,10 @@ const ReportPage: React.FC = () => {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                            <Charts.UcsdStudentsSupport />
                         </div>
                     </div>
-                    <div>
+                    <div style={{marginLeft: "32px"}}>
                         <h3 className="report-page-bolded">UCSD students are fully supportive of my identity. </h3>
                         <p className="report-page-paragraph">Our group found this result to be particularly shocking. Similar to the previous question, a 1 meant that the student disagrees with the statement while a 6 indicates that the student agrees completely Immediately, we can see that the nonbinary group has the lowest average out of all the groups, with an average of 2.</p>
                     </div>
@@ -104,32 +104,32 @@ const ReportPage: React.FC = () => {
                     </div>
                 </div>
                 <img src="/chart-2.png" alt="Chart 2" style={{ width: "1113px", height: "86px" }} />
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "32px" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                            <Charts.OfficeHoursJudgement />
                         </div>
                     </div>
-                    <div>
+                    <div style={{ marginLeft: "32px" }}>
                         <h3 className="report-page-bolded">If I go to office hours or tutoring by the university, I’d feel judged because of my identity. </h3>
                         <p className="report-page-paragraph">With a p-value of 0.007 when comparing the male vs female group, we found there is a disparity between the judgment which the male group goes through versus the female group in the education system. One possible reason could relate to the data we found earlier, which indicated that the female group had felt more like their ideas weren’t being listened to which could potentially make women feel less confident when engaging with a professor or a tutor. Though there could be a plethora of reasons, one discovery we made when interviewing a female interviewee on this topic was that a guy in office hours had actually conveyed his romantic feelings toward the interviewee despite how she was only there to engage in the academic material which is another vector to consider. </p>
                     </div>
                 </div>
-                <img src="/chart-3.png" alt="Chart 3" style={{ width: "1113px", height: "86px" }} />
-                <div>
+                <img src="/chart-3.png" alt="Chart 3" style={{ width: "1113px", height: "86px", marginTop: "32px" }} />
+                <div style={{ marginTop: "32px" }}>
                         <p style={{ fontSize: "16px", fontWeight: "700" }}>Interview Question: “Can you share a moment where you experienced or witnessed social bias on campus?”</p>
                         <div style={{ backgroundColor: "#FFFEDD", width: "1028px", height: "148px", borderRadius: "15px", position: "relative" }}>
                             <img src="/placeholder-2.png" alt="Profile Placeholder 2" style={{ height: "100px", width: "100px", position: "absolute", top: "25px", left: "-50px" }}/>
                             <p className="report-page-paragraph" style={{ margin: "8px 8px 8px 80px" }}>“I’ve been hit on during office hours before. To be clear, it was by other students, not any tutors. The tutors are typically really nice to me. The other students are sometimes questionable. I really am open to making friends or study buddies but it’s just weird now because sometimes I just can’t really tell what some people want from me and I’m just at office hours to get help on the homework you know?” - Candice</p>
                         </div>
                 </div>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "32px" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                            <Charts.ClassJudgement />
                         </div>
                     </div>
-                    <div>
+                    <div style={{ marginLeft: "32px" }}>
                         <h3 className="report-page-bolded">When I attend class, I feel judged by other students because of who I am. </h3>
                         <p className="report-page-paragraph">Once again, we did null hypothesis testing the male vs female groups and found that there is statistical significance with a p-value of 0.003. This conclusion is not surprising considering the result of the previous analysis. However, one metric to point out here is the disparity between Hispanic and non-Hispanic.</p>
                     </div>
@@ -143,37 +143,37 @@ const ReportPage: React.FC = () => {
                     </div>
                 </div>
                 <img src="/chart-4.png" alt="Chart 4" style={{ width: "1113px", height: "86px" }} />
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "32px" }}>
                     <div>
                         <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                            <Charts.ThoughtsMatter />
                         </div>
                     </div>
-                    <div>
+                    <div style={{ marginLeft: "32px" }}>
                         <h3 className="report-page-bolded">On UCSD campus, my thoughts and opinions don’t matter because of my identity.</h3>
                         <p className="report-page-paragraph">Between the male and female groups, we found that these results are statistically significant with a p-value of 0.001. This idea ties into the first trend mentioned above, which is that women are more likely to feel that their ideas are not being listened to compared to their peers. As a result, we can understand why at UCSD women feel that their thoughts and opinions don’t matter since they’re often not getting listened to. </p>
                     </div>
                 </div>
-                <img src="/chart-5.png" alt="Chart 5" style={{ width: "1113px", height: "86px" }} />
-                <p className="report-page-paragraph" style={{ fontSize: "36px" }}>“I've witnessed or experienced social biases in the following settings:”</p>
+                <img src="/chart-5.png" alt="Chart 5" style={{ width: "1113px", height: "86px", marginTop: "32px" }} />
+                <p className="report-page-paragraph" style={{ fontSize: "36px", marginTop: "32px" }}>“I've witnessed or experienced social biases in the following settings:”</p>
                 <img src="/infographic.png" alt="Infographic" style={{ width: "998px", height: "657px" }} />
                 <p className="report-page-paragraph" style={{marginTop: "32px"}}>For those who have experienced social biases at UCSD, a vast majority of these experiences occurred in group or public settings where there are many opportunities to interact with new people, like student organizations or classrooms. On the other hand, places like labs and study spaces are not meant to facilitate a lot of human interaction, so relatively few instances of social biases occurred there. This makes sense because more chances for human interaction means more chances to make offensive jokes, commit microaggressions, etc, regardless of intention. We did find it interesting that so many students said they experienced social biases from friends or friend groups, since friends typically try not to hurt or offend each other by definition. Our suspicion is that these instances of social bias from friends are usually unintentional but still harmful to victims. Finally, it was interesting to see how someone experienced a social bias even in an online community since online communities are often anonymous, which just goes to show how pervasive social biases are in society no matter where you are.</p>
 
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
-                        <div style={{ width: "300px", height: "300px" }} >
-                            <img src="https://via.placeholder.com/300" alt="Placeholder" />
+                        <div style={{ width: "500px", height: "500px", display: "flex", alignItems: "center" }} >
+                            <Charts.MajorSocialBiasBreakdown />
                         </div>
                     </div>
-                    <div>
+                    <div style={{marginLeft: "32px"}}>
                         <h3 style={{fontSize: "36px", fontWeight: "700"}}>Social Bias in Student Organizations</h3>
                         <p className="report-page-paragraph">Considering that students witnessed the most amount of social bias in student organizations,  we wanted to break down to see whether there were any sort of correlations between different groups. We did different variations such as by gender, race, and major and found that major had the most amount of interesting results. The graph above represents the percentage of students per group that stated they had seen social bias in student organizations. </p>
                         <p className="report-page-paragraph">When performing null hypothesis testing, we ignored the “COGS”, “DSC”, and “MAE” groups as there was a very low number of people in these groups. As such, when doing a null hypothesis test on the CSE group versus the ECE group (two groups with the most data in our dataset), we found statistical significance with a p-value of 0.025.</p>
 
                     </div>
                 </div>
-                <p className="report-page-paragraph">Though this data shows statistical significance, this does not necessarily mean to conclude that ECE student organizations have more social bias than CSE student organizations, as students may not necessarily join student organizations belonging to their major (for instance, students in CSE may join IEEE which is an ECE organization or a Math major might join ACM which is a CSE organization). However, if we assume that there is a trend where most CSE students join a CSE organization and ECE students join an ECE organization, then we can conclude that there is some correlation between social bias and the student organization department.</p>
-                <h3 style={{fontSize: "36px", fontWeight: "700"}}>A Note on Microaggressions</h3>
+                <p className="report-page-paragraph" style={{marginTop: "32px"}}>Though this data shows statistical significance, this does not necessarily mean to conclude that ECE student organizations have more social bias than CSE student organizations, as students may not necessarily join student organizations belonging to their major (for instance, students in CSE may join IEEE which is an ECE organization or a Math major might join ACM which is a CSE organization). However, if we assume that there is a trend where most CSE students join a CSE organization and ECE students join an ECE organization, then we can conclude that there is some correlation between social bias and the student organization department.</p>
+                <h3 style={{fontSize: "36px", fontWeight: "700", marginTop: "32px"}}>A Note on Microaggressions</h3>
                 <p className="report-page-paragraph">In our survey, we also dedicated a section to learn about microaggressions on campus. We defined microaggressions and asked participants to evaluate how much they have seen or experienced these on campus. We outlined 3 types of microaggressions, behavioral (communicating a message with actions/symbols that display insensitivity to identify stereotypes), environmental (lack of representation and diversity), verbal (saying something that does not appear to be but is disrespectful or offensive to a marginalized group). Once again, we gave a scale from 1 to 6, but as we wanted to evaluate frequency, 1 represents rarely in this case, while 6 represents extremely often.</p>
                 <p className="report-page-paragraph">Out of the three, we found that environmental microaggression occurs most frequently on campus, with an average of 4.05 in contrast to the other averages of 3.45 for verbal, and 3.18 for behavioral. Environmental microaggressions were also found to be statistically significant with a p-value of 0.0036. It appears that overall, people agree that there is a lack of representation and diversity on campus, especially in STEM programs. There is some basis to this, as we can see there are specific groups (African American, American Indian, Native Hawaiian / Pacific Islander) that are hardly represented at UCSD, even on their <a style={{textDecoration: 'underline', cursor: 'pointer'}} href="https://ir.ucsd.edu/undergrad/publications/6-25INORDER.pdf">Student Profile</a> for all undergraduates. This is further supported by the demographics in engineering at UCSD that can be found on their dashboard (<a target="_blank" rel="noopener noreferrer" href="https://diversity.ucsd.edu/accountability/undergrad.html">https://diversity.ucsd.edu/accountability/undergrad.html</a>).</p>
                 <div>
@@ -183,17 +183,17 @@ const ReportPage: React.FC = () => {
                             <p className="report-page-paragraph" style={{ margin: "8px 8px 8px 80px" }}>“It’s definitely the lack of representation. In my hometown, I was one of the minority groups, and there was a lot of people who said racist shit to me. It really doesn’t help when we don’t see others like us in media and our environment. When I came to UCSD, I was suddenly part of the majority, which felt nice to be accepted, but I have friends who aren’t and they don’t have the best time here.” - Joe</p>
                         </div>
                 </div>
-                <img src="/chart-6.png" alt="Chart 6" style={{ width: "1113px", height: "86px" }} />
-                <p style={{ fontSize: "36px" }}>85% participants believe that microaggressions on campus are usually not intentional.</p>
-                <p className="report-page-paragraph">In one question, we asked participants "How often are microaggressions on campus intentional?" 51 people gave a rating from 1-3, indicating that it's not often, compared to 9 people who would agree that it happens often. </p>
-                <div>
+                <img src="/chart-6.png" alt="Chart 6" style={{ width: "1113px", height: "86px", marginTop: "32px" }} />
+                <p style={{ fontSize: "36px", textAlign: "center", marginTop: "32px" }}>85% participants believe that microaggressions on campus are usually not intentional.</p>
+                <p className="report-page-paragraph" style={{marginTop: "32px"}}>In one question, we asked participants "How often are microaggressions on campus intentional?" 51 people gave a rating from 1-3, indicating that it's not often, compared to 9 people who would agree that it happens often. </p>
+                <div style={{marginTop: "32px"}}>
                         <p style={{ fontSize: "16px", fontWeight: "700" }}>Interview Question: “How do you think your experience and understanding of social biases affect your opinion on UCSD?”</p>
                         <div style={{ backgroundColor: "#FFFEDD", width: "1028px", height: "148px", borderRadius: "15px", position: "relative" }}>
                             <img src="/placeholder-4.png" alt="Profile Placeholder 2" style={{ height: "100px", width: "100px", position: "absolute", top: "25px", left: "-50px" }}/>
                             <p className="report-page-paragraph" style={{ margin: "8px 8px 8px 80px" }}>“Like if I’d still choose UCSD again? I think I would. Probably. Sure there’s some issues but I think all places have issues anyways, but at least the people here that I’ve met are great. Most people I met have good intentions, and yeah sometimes they make bad mistakes, but they’re not bad people. I don’t think anyone here wakes up and hopes they contribute to social biases. At least, I hope not.” - Connor</p>
                         </div>
                 </div>
-                <p className="report-page-paragraph">For the most part, there is an understanding amongst students that microaggressions are often unintentional, though there occassional cases that seem intentional, which indicates a need for change. As shown by the interviewee, there is definite room for improvement, though overall there seems to be a lot of positive experiences. We believe that we should always try to improve, because as long as there’s negative experiences, that’s something to fix.</p>
+                <p className="report-page-paragraph" style={{marginTop: "32px"}}>For the most part, there is an understanding amongst students that microaggressions are often unintentional, though there occassional cases that seem intentional, which indicates a need for change. As shown by the interviewee, there is definite room for improvement, though overall there seems to be a lot of positive experiences. We believe that we should always try to improve, because as long as there’s negative experiences, that’s something to fix.</p>
                 <h3 className="report-page-title">Conclusion</h3>
                 <p className="report-page-paragraph">Based on the responses to our survey and interviews, we found a few interesting results. One such result was that students who identified as female were more likely to say and share that they experienced social biases in their lives, which confirms our hypothesis that females may experience more discrimination than males. It is important to note that some people who answered that they had experienced little to no social bias may actually have experienced it, and either forgot about it or did not think a microaggression counted as an instance of social bias. This may increase the error in our data, which we could mitigate by getting more survey responses and interviews if we had more time to do so. Overall, though, we found that at UCSD, a significant portion of engineering students do experience social biases, and the severity and frequency of these experiences does vary based on demographic.</p>
                 <p className="report-page-paragraph">It's important to note that in the overall sense, most participants felt supported at UCSD. However, we cannot dismiss the fact there was a portion of participants in each question that did not feel the same way. For the statement "I often witness social biases affecting others on campus (classes, student orgs, study spaces, etc)," 31 people rated a number from 1-3, indicating that they overall disagreed, but 29 people agreed with ratings from 4-6. This is further supported by the chart in the previous section. Even if someone isn't personally affected, social biases remain present on campus, and it’s important to understand where some of us hold privileges where others do not.</p>
